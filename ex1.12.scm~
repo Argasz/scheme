@@ -1,0 +1,16 @@
+(define (fact n)
+  (if (= n 1)
+      n
+      (* n ( fact (- n 1)))))
+
+
+(define (n-choose-k n k)
+  (/(fact n)(*(fact k) (fact (- n k)))))
+
+(define (printp level)
+  (let ((k level))
+    (if (not(= k 0))
+	(cons (n-choose-k level k)(printp (- k 1)))
+	(n-choose-k level k))))
+
+(printp 5)

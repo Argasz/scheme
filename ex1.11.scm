@@ -7,11 +7,9 @@
     (if (< count 3)
 	a
 	(it (+ a (* 2 b) (* 3 c)) a b (- count 1))))
-  (if (< n 3)
-      n
-      (it 2 1 0 n)))
+  (it 2 1 0 n))
 	 
     
 
-(funcit 50000)
+(funcit 25)
 (func 25)
