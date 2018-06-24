@@ -2,7 +2,7 @@
   (fib-iter 1 0 0 1 n))
 
 (define (fib-iter a b p q count)
-  (cond ((= count ) b)
+  (cond ((= count 0) b)
 	((even? count)
 	 (fib-iter a
 		   b
@@ -15,7 +15,7 @@
 			 q
 			 (- count 1)))))
 (define (even? n)
-  (= (remainder 2 n) 0))
+  (= (remainder n 2) 0))
 
 
-(fib 5)
+(fib 10)
