@@ -16,14 +16,15 @@
       (list 1)
       (list 1 (print-iter level (- level 1)) 1)))
 
-(define (printria level)
-  (define (printria-iter level count)
-    (printp count)
-    (if (not(= count level))
-	(printria-iter level (+ count 1))
-    )
-  (printria-iter level 1)))
 
-(printp 12)
+(define (printria level)
+  (newline)
+  (display (printp level))
+  (if (not(= level 1))
+      (printria (- level 1))))
+
+     
+
+(printria 30)
 
 
