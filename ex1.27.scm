@@ -19,4 +19,3 @@
 
 (fermat 2821)
 
-(smallest-divisor 2821)
