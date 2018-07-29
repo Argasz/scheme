@@ -1,0 +1,53 @@
+(define (cont-frac n d k)
+  (define (int-frac i)
+    (if (> i k)
+	(d i)
+        (+ (d i) (/ (n i) (int-frac (+ i 1))))))
+  (int-frac 1.0))
+
+(cont-frac (lambda (i) 1.0)
+	   (lambda (i) 1.0)
+	   15)
+
+
+
+(cont-frac (lambda (i)
+		(square (+ i (- i 1))))
+	      (lambda (i)
+		(if (= i 1)
+		    1
+		    2))
+	      15000) ;4/pi
+
+(+ 2.0 (cont-frac (lambda (i) 1)
+		(lambda (i) 
+		  (if (= (modulo i 3) 2)
+		      (/ (+ i 1) 1.5)
+		      1))
+		10))
+
+(modulo 4 3)
+
+; 1 2 1 1 4 1 1 6 1 1 8
+; 1 2 3 4 5 6 7 8 9 a b
+
+
+2 -> 2 +-0
+5 -> 4 -1
+8 -> 6 -2
+11 -> 8 -3
+14 -> 10 -4
+
+(/ 6 1.5)
+
+   
+(- i (- i i))
+(-i (- i 4))
+
+
+
+
+
+
+
+
